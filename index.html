@@ -1,0 +1,326 @@
+<!DOCTYPE html>
+<html lang="kz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nurdaulet & Karlygash</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="images/love.png" type="image/x-icon">
+</head>
+<style>
+    .time {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 05px;
+    }
+
+    .circle {
+      width: 90px;
+      height: 90px;
+      border: 2px solid black;
+      border-radius: 50%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .circle p {
+      margin: 0;
+    }
+
+    .number {
+      font-size: 28px;
+      font-weight: bold;
+    }
+
+    .label {
+      font-size: 14px;
+    }
+
+    .dots {
+      font-size: 32px;
+      line-height: 90px;
+    }
+
+
+
+    #textToCopy {
+      display: inline-block;
+      background: #fff7e6;
+      padding: 15px 20px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 18px;
+      margin-bottom: 20px;
+    }
+
+    button {
+      background-color: #ff9900;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      font-size: 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #e68a00;
+    }
+
+    .audio-button {
+      width:80px;
+      height: 80px;
+      border-radius: 50%;
+      background: #FFB200;
+
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: auto;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .audio-button:hover {
+      background: #ffb300;
+    }
+
+    .icon {
+      position: relative;
+      width: 25px;
+      height: 30px;
+      transition: all 0.3s ease;
+    }
+
+    .icon.play::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 0;
+      height: 0;
+      border-left: 25px solid white;
+      border-top: 15px solid transparent;
+      border-bottom: 15px solid transparent;
+      transition: all 0.3s ease;
+    }
+
+    .icon.pause::before,
+    .icon.pause::after {
+      content: "";
+      position: absolute;
+      top: 0;
+      width: 7px;
+      height: 30px;
+      background: white;
+      transition: all 0.3s ease;
+    }
+
+    .icon.pause::before {
+      left: 0;
+    }
+
+    .icon.pause::after {
+      right: 0;
+    }
+
+    .label {
+      margin-top: 10px;
+      font-size: 20px;
+      font-style: italic;
+    }
+  </style>
+<body>
+    
+    <section0 style="width:max-content; margin: 0px;">
+        <section1 style="display: flex; justify-content: center; flex-wrap: wrap; flex-direction: column; margin: 0px; width: 100%;">
+            <p class="center kzdecor" style="font-size: 1.3em; margin-bottom: 70px;">Нағыз махаббат — бірін-бірі тапқанда<br> емес, бірге бір әлем құра алғанда басталады.</p>
+            <p class="kzklementina jasyl" style="font-size: 2.5em; margin: 0px; margin-left: 15px;">Нұрдәулет</p>
+            <p class="center sary kzklementina" style="font-size: 2.5em; margin: -20px;">&</p>
+            <p class="kzklementina jasyl" style="font-size: 2.5em; margin: 0px; margin-right: 15px; display: flex; justify-content: end;">Қарлығаш</p>
+            <div class="div" style="display: flex; align-items: center;">
+                <img src="images/photo.png" alt="Kate" width="260px" style="margin-left: 10px; margin-top: 10px;">
+                
+                <div style="margin-left:10%;">
+                    <div class="audio-button" onclick="toggleAudio()">
+                    <div class="icon play" id="icon"></div>
+                    </div>
+                    <p style="text-align: center; font-size: 2em; margin: 0px;" class="ITC">әуен</p>
+                </div>
+            </div>
+
+            <audio id="myAudio" src="music.mp4"></audio>
+            <p class="kzklementina jasyl center" style="font-size: 2em; margin-top: 80px;">Құрметті ағайын-туыс,<br>бауырлар, құда-жекжат,<br>дос-жарандар!</p>
+            <p class="center lora " style="font-size: 1.1em;">Сіз(дер)ді ұлымыз Нұрдәулет пен келініміз<br>Қарлығаштың шаңырақ көтерген үйлену<br>тойына арналған салтанатты ақ дастарханға<br>қатысуға шақырамыз!</p>
+            <img src="images/Group 10.png" alt="Kate" style="margin: -10px; margin-right: -20px;">
+
+        </section1>
+        <section2 style="display: flex; justify-content: center; flex-wrap: wrap; flex-direction: column; margin: 0px;">
+            <p style="font-size: 2.5em; letter-spacing: 2px; margin-top: 0px;" class="center sary kzdecor">Той салтанаты</p>
+            <calendar>
+                <p style="margin-bottom: 5px; font-size: 1.6em;" class="kzromulc center jasyl">ШІЛДЕ</p>
+                <p style="margin-top: 0px;  font-size: 1.2em;" class="center">Дс&nbsp;&nbsp;&nbsp;&nbsp;Сс&nbsp;&nbsp;&nbsp;&nbsp;Ср&nbsp;&nbsp;&nbsp;&nbsp;Бс&nbsp;&nbsp;&nbsp;Жм&nbsp;&nbsp;&nbsp;&nbsp;Сн&nbsp;&nbsp;&nbsp;Жк</p>
+                <p style="font-size: 1.2em;" class="center">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;1&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;2&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;3&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;4&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;5&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;6<br><br>
+&nbsp;7&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;8&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;9&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;10&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;11&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;12&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;13 <br><br>
+14&nbsp;&nbsp;&nbsp;&nbsp;15&nbsp;&nbsp;&nbsp;&nbsp;16&nbsp;&nbsp;&nbsp;&nbsp;17&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;18&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;19&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;20<br><br>
+21&nbsp;&nbsp;&nbsp;&nbsp;22&nbsp;&nbsp;&nbsp;&nbsp;23&nbsp;&nbsp;&nbsp;&nbsp;24&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;25&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;26&nbsp;&nbsp;&nbsp;&nbsp;27<br><br>
+&nbsp;28&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;29&nbsp;&nbsp;&nbsp;&nbsp;30&nbsp;&nbsp;&nbsp;&nbsp;31&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</p>
+
+<p style="font-size: 1.2em; letter-spacing:0.5px; word-spacing: 3px; margin-top: 50px; margin-bottom: 0px;" class="center lora">06 шілде 2025жыл</p>
+<p style="font-size: 1.2em; letter-spacing:0.5px; word-spacing: 3px; margin-top: 5px; margin-bottom: 0px;" class="center lora">18:00 Беташар</p>
+<p style="font-size: 1.2em; letter-spacing:0.5px; word-spacing: 3px; margin-top: 5px; margin-bottom: 0px;" class="center lora">19:00 Тойдың басталуы</p>
+<img src="images/Vector 3.png" alt="Kate" style="margin-left: 130px; margin-top: 5px; margin-bottom: 0px;" class="p_center">
+<img src="images/Place Marker.png" alt="Kate" style="margin-top: 20px; margin-left: 195px;" class="p_center">
+<p style="margin-top: 40px; font-size: 1.2em;" class="kzmoumenta center">Мекен-жайымыз:</p>
+<p style="font-size: 1.8em; margin-bottom: 0px;" class="center alice">Алматы қаласы</p>
+<p style="font-size: 1.8em; margin-bottom: 0px; margin-top: 0px;" class="center alice">Токкулова көшесі, 176</p>
+<p style="margin-bottom: 0px; margin-top: 25px; font-size: 3em;" class="bello center">“Батыр”</p>
+<p style="margin-top: 12px; font-size: 1.8em;" class="center ITC">мейрамханасы</p>
+<div class="map center" style="margin-top: 80px; display: flex;  align-items: center; justify-content: center;">
+    <img src="images/map1.png" alt="Kate" style="width: 120px;">
+    <img src="images/map2.png" alt="Kate" style="margin-left: 50px; height: 60px;">
+</div>
+<p style="font-size: 2.5em; letter-spacing: 2px; margin-top: 80px;" class="center sary kzdecor">Тойға дейін:</p>
+
+<div class="time">
+    <div class="circle">
+      <p class="number" id="days">0</p>
+      <p class="label">күн</p>
+    </div>
+    <div class="dots">:</div>
+    <div class="circle">
+      <p class="number" id="hours">0</p>
+      <p class="label">сағат</p>
+    </div>
+    <div class="dots">:</div>
+    <div class="circle">
+      <p class="number" id="minutes">0</p>
+      <p class="label">минут</p>
+    </div>
+    <div class="dots">:</div>
+    <div class="circle">
+      <p class="number" id="seconds">0</p>
+      <p class="label">секунд</p>
+    </div>
+  </div>
+
+<p style="font-size: 2.5em; margin-top: 80px;" class="kzklementina center jasyl2">Қуанышымыздың куәсі<br>болыңыздар</p>
+<p style="font-size: 2.5em; letter-spacing: 2px; margin-top: 140px; margin-bottom: 0px;" class="center sary kzdecor">Той иелері:</p>
+<p style="font-size: 2.5em; margin-top: 15px;" class="kzklementina center jasyl">Абдулла - Салтанат</p>
+            </calendar>
+
+
+        </section2>
+            <footer style="display: flex; justify-content: space-between; padding-left: 10px; padding-right: 10px; align-items: center; background-color: #00000095; width: 100%; margin: -10px;">
+        <p class="sanasoft" style="font-size: 1.5em; color: white;">CREATE BY LAROSSA</p>
+        <div class="sot-seti" style="display: flex; width: 70px; justify-content: space-around;">
+            <a href="tel:77751473353"><img src="images/phone.png" alt="Kate" style="height: 25px;"></a>
+            <a href="https://wa.me/77781473353"><img src="images/whats.png" alt="Kate" style="height: 25px;"></a>
+        </div>
+    </footer>
+    </section0>
+    <main style="width: 500px; align-items: center; justify-content: space-between;">
+        <h1 class="kzmoumenta jasyl">Сайт тек ұялы смартфондарға арналған, өтінеміз смартфон арқылы ашыңыз! </h1>
+        <div class="kosh" style="display: flex; align-items: center;">
+            <p id="textToCopy" style="width: 350px;"> <a href="https://nurdaulet-karlygash-uilenu.vercel.app" style="text-decoration: none;">https://nurdaulet-karlygash-uilenu.vercel.app</a></p>
+            <button onclick="copyText()" style="margin-left: 10px; display: flex;" >📋 Көшіру</button>
+        </div>
+
+    </main>
+
+
+
+
+
+
+
+
+<script>
+  const targetDate = new Date("2025-08-12T00:00:00").getTime();
+
+  const updateCountdown = () => {
+    const now = new Date().getTime();
+    const distance = targetDate - now;
+
+    const days = document.getElementById("days");
+    const hours = document.getElementById("hours");
+    const minutes = document.getElementById("minutes");
+    const seconds = document.getElementById("seconds");
+
+    if (distance <= 0) {
+      days.innerText = "0";
+      hours.innerText = "0";
+      minutes.innerText = "0";
+      seconds.innerText = "0";
+      return;
+    }
+
+    const d = Math.floor(distance / (1000 * 60 * 60 * 24));
+    const h = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const m = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    const s = Math.floor((distance % (1000 * 60)) / 1000);
+
+    days.innerText = d;
+    hours.innerText = h;
+    minutes.innerText = m;
+    seconds.innerText = s;
+  };
+
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+
+
+
+    function copyText() {
+      const text = document.getElementById("textToCopy").innerText;
+
+      navigator.clipboard.writeText(text).then(function() {
+        alert("✅ Мәтін сәтті көшірілді!");
+      }, function(err) {
+        alert("❌ Қате шықты: " + err);
+      });
+    }
+
+
+
+
+
+
+  const audio = document.getElementById("myAudio");
+const icon = document.getElementById("icon");
+let isPlaying = false;
+
+audio.volume = 0.3; // 🟡 0.0 0.3 0.5 1.0
+
+function toggleAudio() {
+  if (!isPlaying) {
+    audio.play().then(() => {
+      icon.classList.remove("play");
+      icon.classList.add("pause");
+      isPlaying = true;
+    }).catch(err => {
+      alert("Ойнатуға рұқсат жоқ: " + err);
+    });
+  } else {
+    audio.pause();
+    icon.classList.remove("pause");
+    icon.classList.add("play");
+    isPlaying = false;
+  }
+}
+
+audio.addEventListener("ended", function () {
+  icon.classList.remove("pause");
+  icon.classList.add("play");
+  isPlaying = false;
+});
+
+</script>
+
+</body>
+</html>
